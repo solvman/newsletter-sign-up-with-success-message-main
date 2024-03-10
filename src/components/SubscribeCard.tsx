@@ -1,7 +1,7 @@
 import Content from "./Content";
 import ResponsiveImage from "./ResponsiveImage";
 
-const Card = () => {
+const SubscribeCard = () => {
   return (
     <article>
       <ResponsiveImage />
@@ -10,4 +10,4 @@ const Card = () => {
   );
 };
 
-export default Card;
+export default SubscribeCard;

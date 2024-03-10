@@ -1,10 +1,10 @@
-import Card from "./components/Card";
+import SubscribeCard from "./components/SubscribeCard";
 
 function App() {
   return (
     <main>
       <h1 className="sr-only">Frontend Mentor project submission</h1>
-      <Card />
+      <SubscribeCard />
     </main>
   );
 }
