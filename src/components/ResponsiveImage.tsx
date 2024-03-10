@@ -5,7 +5,7 @@ const ResponsiveImage = () => {
   return (
     <picture>
       <source media="(min-width: 768px)" srcSet={desktopImage} />
-      <img className="w-full" src={mobileImage} alt="Sign up" />
+      <img className="w-full" src={mobileImage} alt="" aria-hidden />
     </picture>
   );
 };

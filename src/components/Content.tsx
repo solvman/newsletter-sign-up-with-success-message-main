@@ -10,7 +10,7 @@ const Content = () => {
 
   return (
     <section className="px-6 py-10">
-      <h2 className="text-[40px] font-bold">Stay updated!</h2>
+      <h3 className="text-[40px] font-bold">Stay updated!</h3>
       <p className="py-6">
         Join 60,000+ product managers receiving monthly updates on:
       </p>
