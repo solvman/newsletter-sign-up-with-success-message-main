@@ -1,4 +1,5 @@
 import Form from "./Form";
+import Heading from "./Heading";
 import ItemList from "./ItemList";
 
 const Content = () => {
@@ -10,7 +11,7 @@ const Content = () => {
 
   return (
     <section className="px-6 py-10">
-      <h3 className="text-[40px] font-bold">Stay updated!</h3>
+      <Heading>Stay updated!</Heading>
       <p className="py-6">
         Join 60,000+ product managers receiving monthly updates on:
       </p>
