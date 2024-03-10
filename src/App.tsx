@@ -2,7 +2,7 @@ import SubscribeCard from "./components/SubscribeCard";
 
 function App() {
   return (
-    <main>
+    <main className="text-neutral-800">
       <h1 className="sr-only">Frontend Mentor project submission</h1>
       <SubscribeCard />
     </main>

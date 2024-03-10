@@ -9,9 +9,11 @@ const Content = () => {
   ];
 
   return (
-    <section>
-      <h2>Stay updated!</h2>
-      <p>Join 60,000+ product managers receiving monthly updates on:</p>
+    <section className="px-6 py-10">
+      <h2 className="text-[40px] font-bold">Stay updated!</h2>
+      <p className="py-6">
+        Join 60,000+ product managers receiving monthly updates on:
+      </p>
       <ItemList items={listItems} />
       <Form />
     </section>
