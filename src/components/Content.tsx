@@ -2,7 +2,11 @@ import Form from "./Form";
 import Heading from "./Heading";
 import ItemList from "./ItemList";
 
-const Content = () => {
+interface ContentProps {
+  setEmail: (email: string) => void;
+}
+
+const Content = ({ setEmail }: ContentProps) => {
   const listItems = [
     "Product discovery and building what matters",
     "Measuring to ensure updates are a success",
@@ -16,7 +20,7 @@ const Content = () => {
         Join 60,000+ product managers receiving monthly updates on:
       </p>
       <ItemList items={listItems} />
-      <Form />
+      <Form setEmail={setEmail} />
     </section>
   );
 };

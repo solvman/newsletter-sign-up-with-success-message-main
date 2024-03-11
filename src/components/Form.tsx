@@ -1,8 +1,17 @@
 import Button from "./Button";
 
-const Form = () => {
+interface FormProps {
+  setEmail: (email: string) => void;
+}
+
+const Form = ({ setEmail }: FormProps) => {
+  const onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    setEmail(event.currentTarget.email.value);
+  };
+
   return (
-    <form className="mt-10 flex flex-col">
+    <form onSubmit={onSubmit} className="mt-10 flex flex-col">
       <label className="text-xs font-bold" htmlFor="email">
         Email address
       </label>

@@ -4,9 +4,10 @@ import Button from "./Button";
 
 interface ThankYouCardProps {
   email: string;
+  setEmail: (email: string) => void;
 }
 
-const ThankYouCard = ({ email }: ThankYouCardProps) => {
+const ThankYouCard = ({ email, setEmail }: ThankYouCardProps) => {
   return (
     <article>
       <h2 className="sr-only">Thank you card</h2>
@@ -17,7 +18,14 @@ const ThankYouCard = ({ email }: ThankYouCardProps) => {
           A confirmation email has been sent to <strong>{email}.</strong> Please
           open it and click the button inside to confirm your subscription
         </p>
-        <Button type="button">Dismiss message</Button>
+        <Button
+          type="button"
+          onClick={() => {
+            setEmail("");
+          }}
+        >
+          Dismiss message
+        </Button>
       </section>
     </article>
   );
