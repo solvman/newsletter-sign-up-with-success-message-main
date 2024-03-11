@@ -14,7 +14,7 @@ const Content = ({ setEmail }: ContentProps) => {
   ];
 
   return (
-    <section className="px-6 py-10">
+    <section className="px-6 py-10 md:flex md:flex-col md:justify-center lg:pl-16">
       <Heading>Stay updated!</Heading>
       <p className="py-6">
         Join 60,000+ product managers receiving monthly updates on:

@@ -6,7 +6,7 @@ function App() {
   const [email, setEmail] = useState<string>("");
 
   return (
-    <main className="text-neutral-800">
+    <main className="text-neutral-800 md:flex md:min-h-screen md:items-center md:justify-center md:bg-neutral-700">
       <h1 className="sr-only">Frontend Mentor project submission</h1>
       {!email ? (
         <SubscribeCard setEmail={setEmail} />
