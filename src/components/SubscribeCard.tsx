@@ -7,7 +7,7 @@ interface SubscribeCardProps {
 
 const SubscribeCard = ({ setEmail }: SubscribeCardProps) => {
   return (
-    <article className="flex-row-reverse md:mx-6 md:flex md:rounded-[36px] md:border md:bg-neutral-100 md:shadow-2xl md:shadow-black/25">
+    <article className="md:mx-6 md:flex md:flex-row-reverse md:rounded-[36px] md:border md:bg-neutral-100 md:shadow-2xl md:shadow-black/25">
       <h2 className="sr-only">Subscribe sign up form.</h2>
       <ResponsiveImage />
       <Content setEmail={setEmail} />
