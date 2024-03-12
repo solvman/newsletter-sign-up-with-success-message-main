@@ -1,5 +1,6 @@
 /* eslint-disable no-useless-escape */
 import { useEffect, useState } from "react";
+import useDebounce from "../hooks/useDebounce";
 import Button from "./Button";
 import { twMerge } from "tailwind-merge";
 
@@ -11,19 +12,31 @@ interface FormProps {
 }
 
 const Form = ({ setEmail }: FormProps) => {
-  const [isValidEmail, setIsValidEmail] = useState(true);
   const [inputValue, setInputValue] = useState("");
+  const [isError, setIsError] = useState(false);
+  const debouncedInputValue = useDebounce(inputValue);
 
   useEffect(() => {
-    setIsValidEmail(EMAIL_REGEX.test(inputValue));
-  }, [inputValue]);
+    if (debouncedInputValue !== "") {
+      if (EMAIL_REGEX.test(debouncedInputValue)) {
+        setIsError(false);
+      } else {
+        setIsError(true);
+      }
+    }
+  }, [debouncedInputValue]);
+
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setInputValue(event.target.value);
+  };
 
   const onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    const email = event.currentTarget.email.value.trim();
 
-    if (isValidEmail) {
-      setEmail(email);
+    if (EMAIL_REGEX.test(inputValue)) {
+      setEmail(inputValue);
+    } else {
+      setIsError(true);
     }
   };
 
@@ -33,7 +46,7 @@ const Form = ({ setEmail }: FormProps) => {
         <label className="text-xs font-bold" htmlFor="email">
           Email address
         </label>
-        {!isValidEmail && (
+        {isError && (
           <small className="text-xs font-bold text-primary-300">
             Valid email required
           </small>
@@ -41,7 +54,7 @@ const Form = ({ setEmail }: FormProps) => {
       </div>
       <input
         value={inputValue}
-        onChange={(e) => setInputValue(e.target.value)}
+        onChange={handleChange}
         type="email"
         id="email"
         name="email"
@@ -49,7 +62,7 @@ const Form = ({ setEmail }: FormProps) => {
         autoComplete="off"
         className={twMerge(
           "mb-6 mt-2 cursor-pointer rounded-lg border border-neutral-300 px-6 py-4 placeholder-neutral-800 placeholder-opacity-50 transition duration-200 ease-in-out focus:border-neutral-800 focus:outline-none",
-          !isValidEmail &&
+          isError &&
             "border-primary-300 bg-primary-300/25 text-primary-300 placeholder-primary-300 focus:border-primary-300 focus:ring-primary-300",
         )}
       />
