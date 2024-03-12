@@ -31,8 +31,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [https://github.com/solvman/newsletter-sign-up-with-success-message-main](https://github.com/solvman/newsletter-sign-up-with-success-message-main)
+- Live Site URL: [https://dazzling-kitsune-fba040.netlify.app/](https://dazzling-kitsune-fba040.netlify.app/)
 
 ## My process
 
