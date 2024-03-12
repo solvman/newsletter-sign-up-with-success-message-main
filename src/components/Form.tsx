@@ -60,6 +60,7 @@ const Form = ({ setEmail }: FormProps) => {
         name="email"
         placeholder="email@company.com"
         autoComplete="off"
+        aria-invalid={isError}
         className={twMerge(
           "mb-6 mt-2 cursor-pointer rounded-lg border border-neutral-300 px-6 py-4 placeholder-neutral-800 placeholder-opacity-50 transition duration-200 ease-in-out focus:border-neutral-800 focus:outline-none",
           isError &&
