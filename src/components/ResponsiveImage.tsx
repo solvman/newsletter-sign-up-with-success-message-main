@@ -10,6 +10,8 @@ const ResponsiveImage = () => {
         src={mobileImage}
         alt=""
         aria-hidden
+        width={375}
+        height={284}
       />
     </picture>
   );
